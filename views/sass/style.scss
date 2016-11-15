@@ -1,0 +1,136 @@
+.logo {
+	width: 100%;
+	max-width: 230px;
+}
+
+.loader {
+	width: 70%;
+	height: 80px;
+	margin: auto;
+	border: 2px solid #222;
+	border-radius: 5px;
+}
+
+.users {
+	width: 50%;
+	margin: auto;
+}
+
+.steam-sign-in {
+	margin-top: 5px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/************************
+		Tabs
+************************/
+.tabs {
+
+	h1 { 
+		font-weight: 600;
+	}
+
+	.indicator {
+		background-color: #ffb300;
+	}
+}
+
+.container {
+	margin-top: 80px;
+}
+
+/************************
+		Player Cards
+************************/
+
+.players {
+	margin: auto;
+	margin-top: 0;
+  	
+
+  		li {
+  			display: inline-block;
+  			margin: 0 20px;
+  			overflow: auto;
+  		}
+
+		ul {
+			width: 100%;
+			overflow: hidden;
+      		white-space: nowrap;
+		}
+
+		.player-card {
+			width: 18%;
+			margin: 10px 10px;
+			display: inline-block;
+		}
+}
+
+/************************
+		Wheel Content
+************************/
+
+.pot-total,
+.user-percentage {
+	position: relative;
+	top: -140px;
+	font-size: 3em;
+	font-weight: 600;
+
+	h2 {
+		margin: 0;
+		font-weight: 600;
+	}
+
+	p {
+		font-size: 16px;
+		padding-left: 38px;
+	}
+}
+/************************
+		Skins
+************************/
+
+.gun-skins ul {
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.skin {
+	display: inline-block;
+	width: 10%;
+	height: 10%;
+}
+
+.collection {
+	max-height: 100px;
+}
+ 
+/************************
+		Footer
+************************/
+footer {
+	height: 60px;
+
+	ul {
+		margin-top: 20px;
+	}
+
+	li {
+		display: inline-block;
+		margin: 0 50px;
+	}
+}
+.roundInfo span{
+  padding-right: 1em
+}

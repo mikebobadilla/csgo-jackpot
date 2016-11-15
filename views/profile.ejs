@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<main>
+
+  <body>
+
+    <nav>
+      <div class="nav-wrapper grey darken-4">
+        <a href="/" class="brand-logo center"><img src="img/logo.png" class="logo img-responsive" alt="">
+        </a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a class="white-text" href="/">Jackpot</a>
+          </li>
+          <li class="active white-text"><a  href="/mini">Mini-Jackpot</a>
+          </li>
+          <li class="grey-text"><a class="grey-text" href="#">BlackJack</a>
+          </li>
+          <li class="grey-text"><a class="grey-text" href="#">Poker</a>
+          </li>
+          <li class="grey-text"><a class="grey-text" href="#">Roulette</a>
+          </li>
+          <li class="grey-text"><a class="grey-text" href="#">More Games</a>
+          </li>
+        </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#">Wallet $0.00</a>
+          </li>
+          <li>
+            <% if (user) { %>
+             <a href="/profile">
+              <%= displayName %>
+            </a>
+                <% if (!displayName) { %>
+                  <script>
+                    alert('no user found');
+                  </script>
+                  <% } %>
+          </li><li><a href="/logout">Logout</a></li>
+                    <% } else{ %>
+                      <a href="/auth/steam" class="right steam-sign-in"><img src="http://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_small.png" alt="">
+                      </a>
+                      <% } %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<div style="margin-top:100px" class="container">
+    <div class="row">
+      <div class="section">
+        <div class="players center">
+          <form id="player_info" class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input disabled placeholder="<%= displayName %>" id="displayName" type="text" class="validate">
+                <label for="display_name">Name</label>
+              </div>
+              <div class="input-field col s6">
+                <input disabled value="<%= user %>" id="steamId" type="text" class="validate">
+                <label for="steam_id">Steam Id</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <% if(tradeUrl== null) { %>
+                  <input placeholder="Enter Trade Url Here" id="tradeUrl" type="text" class="validate">
+                  <% } else { %>
+                    <input style="font-size:.7em" value="<%= tradeUrl %>" placeholder="Enter Trade Url Here" id="tradeUrl" type="text" class="validate">
+                    <% } %>
+                      <label for="trade_url">Trade Url (<a target="_blank" href="http://steamcommunity.com/id/id/tradeoffers/privacy#trade_offer_access_url">Get Link</a>)</label>
+
+              </div>
+
+            </div>
+
+            <button id="player_send" class="btn waves-effect waves-light" type="submit" name="action">Submit
+              <i class="material-icons">send</i>
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+    </div>
+</main>
+<div class="chat">
+  <a href="#" class="waves-effect waves-light btn-large right blue darken-1 z-depth-0">Chat</a>
+</div>
+<footer class="grey darken-4">
+  <ul class="right white-text">
+    <li><a href="/play">How To Play</a></li>
+    <li><a href="/fair">Provably Fair</a></li>
+    <li><a href="/tos" target="_blank">TOS</a></li>
+    <li><a href="/support">Support</a></li>
+  </ul>
+</footer>
+
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script>
+  $("#player_send").on('click', (function (e) {
+    e.preventDefault();
+    var tradeURL = $("#tradeUrl").val()
+    $.ajax({
+        method: 'POST',
+        url: 'http://csgoparlor.com/tradeUrl',
+        data: {
+          tradeurl: tradeURL
+        },
+        xhrFields: {
+          withCredentials: true
+        }
+      })
+      .done(function (msg) {
+        Materialize.toast('Trade Url Successfully Added!', 4000)
+      })
+      .error(function (err) {
+        console.log(err)
+      })
+  }))
+</script>
+
+</body>
+
+</html>

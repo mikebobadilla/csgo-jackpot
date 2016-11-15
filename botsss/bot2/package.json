@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "steam": "^0.6.8",
+    "steam-tradeoffers": "^1.2.2",
+    "kue": "^0.9.4",
+    "sequelize": "^3.5.1"
+  }
+}

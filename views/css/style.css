@@ -1,0 +1,150 @@
+/* line 1, ../sass/style.scss */
+.logo {
+  width: 100%;
+  max-width: 230px;
+}
+
+/* line 6, ../sass/style.scss */
+.loader {
+  width: 70%;
+  height: 80px;
+  margin: auto;
+  border: 2px solid #222;
+  border-radius: 5px;
+}
+
+/* line 14, ../sass/style.scss */
+.users {
+  width: 50%;
+  margin: auto;
+}
+
+/* line 19, ../sass/style.scss */
+.steam-sign-in {
+  margin-top: 5px;
+}
+
+/* line 23, ../sass/style.scss */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* line 29, ../sass/style.scss */
+main {
+  flex: 1 0 auto;
+}
+
+/************************
+		Tabs
+************************/
+/* line 38, ../sass/style.scss */
+.tabs h1 {
+  font-weight: 600;
+}
+/* line 42, ../sass/style.scss */
+.tabs .indicator {
+  background-color: #ffb300;
+}
+
+/* line 47, ../sass/style.scss */
+.container {
+/*  margin-top: 80px;*/
+}
+
+/************************
+		Player Cards
+************************/
+/* line 55, ../sass/style.scss */
+.players {
+  margin: auto;
+  margin-top: 0;
+}
+/* line 60, ../sass/style.scss */
+.players li {
+  display: inline-block;
+  margin: 0 20px;
+  overflow: auto;
+}
+/* line 66, ../sass/style.scss */
+.players ul {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* line 72, ../sass/style.scss */
+.players .player-card {
+/*  width: 18%;*/
+/*  margin: 10px 10px;*/
+  display: inline-block;
+}
+
+/************************
+		Wheel Content
+************************/
+/* line 84, ../sass/style.scss */
+.pot-total,
+.user-percentage {
+  position: relative;
+  top: -140px;
+  font-size: 3em;
+  font-weight: 600;
+}
+/* line 90, ../sass/style.scss */
+.pot-total h2,
+.user-percentage h2 {
+  margin: 0;
+  font-weight: 600;
+}
+/* line 95, ../sass/style.scss */
+.pot-total p,
+.user-percentage p {
+  font-size: 16px;
+  padding-left: 38px;
+}
+
+/************************
+		Skins
+************************/
+/* line 104, ../sass/style.scss */
+.gun-skins ul {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* line 109, ../sass/style.scss */
+.skin {
+  display: inline-block;
+  width: 10%;
+  height: 10%;
+}
+
+/* line 115, ../sass/style.scss */
+/*
+.collection {
+  max-height: 100px;
+}
+*/
+
+/************************
+		Footer
+************************/
+/* line 122, ../sass/style.scss */
+footer {
+  height: 60px;
+}
+/* line 125, ../sass/style.scss */
+footer ul {
+  margin-top: 20px;
+}
+/* line 129, ../sass/style.scss */
+footer li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+
+.roundInfo span{
+  padding-right: 2em
+}

@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "kue": "^0.9.4",
+    "steam": "1.0.0",
+    "steam-tradeoffers": "2.0.0",
+    "steam-web-api-key": "0.0.1",
+    "steam-weblogon": "0.0.3",
+    "sequelize": "^3.5.1"
+  }
+}

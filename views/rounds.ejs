@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+  <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<main>
+
+  <body>
+
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo center"><img src="img/logo.png" class="logo" alt="">
+        </a>
+
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="#">Jackpot</a>
+          </li>
+          <li><a href="#">Support</a>
+          </li>
+          <li><a href="#">Terms of Service</a>
+          </li>
+          <li><a href="#">How to Play</a>
+          </li>
+        </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#">Wallet $0.00</a>
+          </li>
+          <li>
+            <% if (user) { %>
+              <%= user.steam.displayName %>
+                
+                    <a href="/logout">Logout</a>
+                    <% } else{ %>
+                      <a href="/auth/steam" class="right steam-sign-in"><img src="http://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_small.png" alt="">
+                      </a>
+                      <% } %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+    <div class="row">
+      <table class="striped centered">
+        <thead>
+          <tr>
+              <th data-field="round">Round #</th><th data-field="salt">Salt</th>
+              <th data-field="hash">Hash</th>
+              <th data-field="tickets">Tickets</th><th data-field="win-percentage">Win %</th>
+              
+            <th data-field="winner">Winner</th>
+          </tr>
+        </thead>
+
+        <tbody>
+         <% rounds.forEach(function(round){ %>
+          <tr>
+            <td><%= round.roundid %></td>
+            <td><%= round.salt %></td>
+            <td><%= round.hash %></td>
+            <td><%= round.tickets %></td>
+            <td><%= round.winnerpercentage %></td>
+            <td><%= round.winner %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+    </div>
+</main>
+<footer class="red lighten-1">
+  <ul class="right">
+    <li>Link</li>
+    <li>Link</li>
+    <li>Link</li>
+    <li>Link</li>
+  </ul>
+</footer>
+
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+
+</body>
+
+</html>
